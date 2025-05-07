@@ -12,10 +12,10 @@ LBP_RADIUS_TRAINING = 3
 LBP_POINTS_TRAINING = 8 * LBP_RADIUS_TRAINING
 
 # --- Paths to Saved Model Artifacts ---
-MODEL_DIR = "trained_model" # Folder where you saved the .joblib files
+MODEL_DIR = "trained_model_old" # Folder where you saved the .joblib files
 MODEL_PATH = os.path.join(MODEL_DIR, "soil_classifier_model_randomforest.joblib")
 SCALER_PATH = os.path.join(MODEL_DIR, "scaler.joblib")
-LABEL_ENCODER_PATH = os.path.join(MODEL_DIR, "label_encoder.joblib")
+LABEL_ENCODER_PATH = os.path.join(MODEL_DIR, "label_encoder.1joblib")
 
 # --- 1. Segmentation Function (COPY EXACTLY FROM YOUR SEGMENTATION SCRIPT) ---
 # This function needs to be identical to the one used to create 'segmented_soil_dataset'
@@ -141,7 +141,7 @@ except Exception as e:
 
 
 # --- 4. Main Camera Loop ---
-cap = cv2.VideoCapture(1) # 0 for default camera
+cap = cv2.VideoCapture(0) # 0 for default camera
 
 if not cap.isOpened():
     print("Error: Could not open camera.")
